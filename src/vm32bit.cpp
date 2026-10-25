@@ -2,23 +2,6 @@
 #include "parser.hpp"
 #include "translator.hpp"
 
-// Project by chalcinxx
-// https://www.youtube.com/playlist?list=PLAYMpoWModGOzP_LNhaJDvMbUxX_9OI90
-
-// Resources:
-// Command documentation for 16bit opcodes
-// https://www.jmeiners.com/lc3-vm/supplies/lc3-isa.pdf
-// Guide for creating your own LC-3 16bit virtual machine (lexer, parser not included!)
-// https://www.jmeiners.com/lc3-vm/
-
-// This virtual machine has memory and a CPU that executes some basic
-// instructions. It reads a file, turns the contents into tokens for parsing,
-// translates the labels into memory addresses and handles includes, parses the
-// tokens into instructions and places them into memory and executes the
-// instructions one by one.
-// The commands can be found in opcodes.hpp file, where their bit size and
-// functions are documented.
-
 int main()
 {
    while (true)
@@ -34,8 +17,6 @@ int main()
       if (command == "help"s || command == "info"s)
       {
          std::cout << "Run a file: 'run file.asx'\n";
-         std::cout << "Compile a file: 'compile file.asx executable.exf'\n";
-         std::cout << "Run an executable: 'exec executable.exf'\n";
          std::cout << "Quit the program: 'quit' or 'exit'\n";
          continue;
       }
@@ -91,19 +72,6 @@ int main()
          std::cout << reg.at(R_R3) << std::endl;
          std::cout << reg.at(R_R4) << std::endl;
       }
-
-      // Compiling
-      else if (command == "compile"s && !output.empty())
-      {
-
-      }
-
-      // Running an executable
-      else if (command == "exec"s && output.empty())
-      {
-
-      }
-
       // Invalid statement
       else
       {
