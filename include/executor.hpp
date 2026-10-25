@@ -31,7 +31,7 @@ public:
       clear_registers();
       reg.at(R_PC) = pcStart;
 
-      while (reg.at(R_PC) < maxMemory)
+      while (reg.at(R_PC) >= 0 && reg.at(R_PC) < (std::int32_t)maxMemory)
       {
          std::uint32_t instr = memory.at(reg.at(R_PC));
 

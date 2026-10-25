@@ -4,7 +4,12 @@
 This virtual machine has memory and a CPU that is capable of executing some basic instructions. It reads a file, turns the characters into words (tokens) and then parses the tokens into intructions and stores them into memory and executes the instructions one by one. The commands can be found in [include/opcodes.hpp](include/opcodes.hpp), where they are documented.
 
 ## Building
-This project only depends on C++17 and can be built using your favorite compiler:
+This project only depends on C++17 and can be built using CMake:
+```bash
+cmake -B build
+cmake --build build
+```
+The executable will be found in `build/vm`. Or build using your favorite compiler:
 ```bash
 g++ -std=c++17 -Iinclude src/vm32bit.cpp -o vm
 ```
